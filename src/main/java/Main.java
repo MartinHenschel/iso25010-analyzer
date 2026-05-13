@@ -5,6 +5,7 @@ import src.main.java.utils.analyzers.CyclomaticAnalyzer;
 import src.main.java.utils.analyzers.CboAnalyzer;
 import src.main.java.utils.analyzers.DryAnalyzer;
 import src.main.java.utils.analyzers.CoverageAnalyzer;
+import src.main.java.utils.analyzers.BenchmarkAnalyzer;
 import src.main.java.utils.report.ReportGenerator;
 
 import java.io.File;
@@ -79,7 +80,15 @@ public class Main {
         System.out.println("   MODULO I - DUPLICACAO DE CODIGO (DRY)");
         System.out.println("========================================\n");
 
-        DryAnalyzer.Result dryResult = DryAnalyzer.analyze(javaFiles);
+        DryAnalyzer.Result dryResult;
+
+        if (javaFiles.size() > 100) {
+            System.out.println("  Projeto grande detectado (" + javaFiles.size() + " arquivos).");
+            System.out.println("  Analisando amostra de 20 arquivos...\n");
+            dryResult = DryAnalyzer.analyze(javaFiles.subList(0, 20));
+        } else {
+            dryResult = DryAnalyzer.analyze(javaFiles);
+        }
 
         if (dryResult.duplicates.isEmpty()) {
             System.out.println("  Nenhuma duplicacao encontrada. [OK]");
@@ -128,6 +137,36 @@ public class Main {
                 CoverageAnalyzer.getStatus(coverageResult.overallCoverage()));
 
         // ============================================
+        // MODULO II - BENCHMARKING DINAMICO
+        // ============================================
+        System.out.println("\n========================================");
+        System.out.println("   MODULO II - BENCHMARKING DINAMICO");
+        System.out.println("========================================\n");
+
+        System.out.println("Digite o caminho do executavel java.exe do projeto alvo");
+        System.out.println("(pressione Enter para usar o java atual):");
+        String javaExeInput = scanner.nextLine().trim();
+
+        String javaExe = javaExeInput.isEmpty()
+            ? "C:\\Program Files\\Eclipse Adoptium\\jdk-25.0.3.9-hotspot\\bin\\java.exe"
+            : javaExeInput;
+
+        BenchmarkAnalyzer.Result benchmarkResult = BenchmarkAnalyzer.analyze(path, javaExe);
+
+        if (!benchmarkResult.loadResults.isEmpty()) {
+            System.out.println("\n  Resultados por carga:");
+            System.out.println("  ----------------------------------------");
+            for (BenchmarkAnalyzer.LoadResult lr : benchmarkResult.loadResults) {
+                System.out.printf("  Carga %5d: %s%n",
+                    lr.load,
+                    lr.timedOut ? "TIMEOUT (>5s)" : lr.elapsedMs + "ms");
+            }
+            double increase = benchmarkResult.latencyIncreasePercent();
+            System.out.printf("%n  Aumento de latencia (100 -> 5000): %.1f%% %s%n",
+                increase, BenchmarkAnalyzer.getLatencyStatus(increase));
+        }
+
+        // ============================================
         // MODULO IV - GERACAO DE RELATORIO HTML
         // ============================================
         System.out.println("\nGerando relatorio HTML...");
@@ -148,6 +187,7 @@ public class Main {
             cboResults,
             dryResult,
             coverageResult,
+            benchmarkResult,
             reportPath
         );
     }

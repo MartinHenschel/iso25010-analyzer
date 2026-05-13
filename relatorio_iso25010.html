@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang='pt-BR'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>Relatorio ISO/IEC 25010</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; color: #333; }
+header { background: #1a1a2e; color: white; padding: 30px 40px; }
+header h1 { font-size: 1.8em; }
+header p { color: #aaa; margin-top: 5px; }
+.container { max-width: 1100px; margin: 30px auto; padding: 0 20px; }
+.summary { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; margin-bottom: 30px; }
+.card { background: white; border-radius: 10px; padding: 20px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.card h3 { font-size: 0.85em; color: #888; margin-bottom: 8px; text-transform: uppercase; }
+.card .value { font-size: 2em; font-weight: bold; }
+.ok { color: #27ae60; }
+.warn { color: #f39c12; }
+.danger { color: #e74c3c; }
+.section { background: white; border-radius: 10px; padding: 25px; margin-bottom: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.section h2 { font-size: 1.1em; border-bottom: 2px solid #1a1a2e; padding-bottom: 10px; margin-bottom: 20px; color: #1a1a2e; }
+table { width: 100%; border-collapse: collapse; font-size: 0.9em; }
+th { background: #1a1a2e; color: white; padding: 10px 15px; text-align: left; }
+td { padding: 10px 15px; border-bottom: 1px solid #eee; }
+tr:hover td { background: #f9f9f9; }
+.badge { padding: 3px 10px; border-radius: 20px; font-size: 0.8em; font-weight: bold; }
+.badge-ok { background: #d5f5e3; color: #27ae60; }
+.badge-warn { background: #fef9e7; color: #f39c12; }
+.badge-danger { background: #fdedec; color: #e74c3c; }
+.badge-critical { background: #f9ebea; color: #c0392b; }
+footer { text-align: center; padding: 20px; color: #aaa; font-size: 0.85em; }
+</style>
+</head>
+<body>
+<header>
+<h1>&#128202; Relatorio de Qualidade - ISO/IEC 25010</h1>
+<p>Gerado em: 13/05/2026 03:42 &nbsp;|&nbsp; Projeto: C:\Users\danih\iso25010-analyzer</p>
+</header>
+<div class='container'>
+<div class='summary'>
+<div class='card'><h3>Arquivos</h3><div class='value ok'>8</div></div>
+<div class='card'><h3>Duplicacoes</h3><div class='value danger'>4</div></div>
+<div class='card'><h3>Cobertura</h3><div class='value danger'>0%</div></div>
+<div class='card'><h3>Latencia</h3><div class='value ok'>+-15%</div></div>
+<div class='card'><h3>Status Geral</h3><div class='value danger'>REPROVADO</div></div>
+</div>
+<div class='section'>
+<h2>&#128268; Modulo I - Complexidade Ciclomatica (McCabe)</h2>
+<table>
+<tr><th>Arquivo</th><th>Metodo</th><th>Complexidade</th><th>Status</th></tr>
+<tr><td>BenchmarkAnalyzer.java</td><td>LoadResult</td><td>1</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>BenchmarkAnalyzer.java</td><td>Result</td><td>1</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>BenchmarkAnalyzer.java</td><td>latencyIncreasePercent</td><td>3</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>BenchmarkAnalyzer.java</td><td>analyze</td><td>3</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>BenchmarkAnalyzer.java</td><td>findClasspath</td><td>2</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>BenchmarkAnalyzer.java</td><td>findMainClass</td><td>2</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>BenchmarkAnalyzer.java</td><td>searchMainClass</td><td>6</td><td><span class='badge badge-warn'>MEDIA - ATENCAO</span></td></tr>
+<tr><td>BenchmarkAnalyzer.java</td><td>extractMainClass</td><td>4</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>BenchmarkAnalyzer.java</td><td>getLatencyStatus</td><td>4</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>Main.java</td><td>main</td><td>5</td><td><span class='badge badge-warn'>MEDIA - ATENCAO</span></td></tr>
+<tr><td>Main.java</td><td>getCyclomaticStatus</td><td>4</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>CboAnalyzer.java</td><td>FileResult</td><td>1</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>CboAnalyzer.java</td><td>getCbo</td><td>1</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>CboAnalyzer.java</td><td>analyze</td><td>4</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>CboAnalyzer.java</td><td>isCodeLine</td><td>1</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>CboAnalyzer.java</td><td>isClassName</td><td>6</td><td><span class='badge badge-warn'>MEDIA - ATENCAO</span></td></tr>
+<tr><td>CboAnalyzer.java</td><td>getClassName</td><td>1</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>CboAnalyzer.java</td><td>getStatus</td><td>4</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>CoverageAnalyzer.java</td><td>FileResult</td><td>1</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>CoverageAnalyzer.java</td><td>coveragePercent</td><td>2</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>CoverageAnalyzer.java</td><td>overallCoverage</td><td>2</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>CoverageAnalyzer.java</td><td>analyze</td><td>4</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>CoverageAnalyzer.java</td><td>isTestFile</td><td>1</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>CoverageAnalyzer.java</td><td>findTestFile</td><td>2</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>CoverageAnalyzer.java</td><td>extractMethodNames</td><td>3</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>CoverageAnalyzer.java</td><td>isMethodSignature</td><td>1</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>CoverageAnalyzer.java</td><td>extractMethodName</td><td>1</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>CoverageAnalyzer.java</td><td>readContent</td><td>1</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>CoverageAnalyzer.java</td><td>getStatus</td><td>4</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>CyclomaticAnalyzer.java</td><td>MethodResult</td><td>1</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>CyclomaticAnalyzer.java</td><td>FileResult</td><td>1</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>CyclomaticAnalyzer.java</td><td>totalComplexity</td><td>1</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>CyclomaticAnalyzer.java</td><td>analyze</td><td>7</td><td><span class='badge badge-warn'>MEDIA - ATENCAO</span></td></tr>
+<tr><td>CyclomaticAnalyzer.java</td><td>isMethodSignature</td><td>1</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>CyclomaticAnalyzer.java</td><td>extractMethodName</td><td>1</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>DryAnalyzer.java</td><td>DuplicateBlock</td><td>1</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>DryAnalyzer.java</td><td>totalPoints</td><td>1</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>DryAnalyzer.java</td><td>analyze</td><td>1</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>DryAnalyzer.java</td><td>alreadyRegistered</td><td>2</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>DryAnalyzer.java</td><td>normalize</td><td>1</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>DryAnalyzer.java</td><td>readLines</td><td>2</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>DryAnalyzer.java</td><td>isRelevantLine</td><td>6</td><td><span class='badge badge-warn'>MEDIA - ATENCAO</span></td></tr>
+<tr><td>DryAnalyzer.java</td><td>getStatus</td><td>4</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>FileScanner.java</td><td>getJavaFiles</td><td>4</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>ReportGenerator.java</td><td>summaryCard</td><td>1</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>ReportGenerator.java</td><td>badge</td><td>4</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>ReportGenerator.java</td><td>getCyclomaticLabel</td><td>4</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>ReportGenerator.java</td><td>getCboLabel</td><td>4</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>ReportGenerator.java</td><td>getCoverageLabel</td><td>4</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>ReportGenerator.java</td><td>getLatencyLabel</td><td>4</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+<tr><td>ReportGenerator.java</td><td>escapeHtml</td><td>1</td><td><span class='badge badge-ok'>BAIXA - OK</span></td></tr>
+</table></div>
+<div class='section'>
+<h2>&#128279; Modulo I - Acoplamento entre Objetos (CBO)</h2>
+<table>
+<tr><th>Arquivo</th><th>Classes Usadas</th><th>CBO</th><th>Status</th></tr>
+<tr><td>BenchmarkAnalyzer.java</td><td>[InputStreamReader, ProcessBuilder, TimeUnit, Process, LoadResult, Result]</td><td>6</td><td><span class='badge badge-warn'>MEDIO - ATENCAO</span></td></tr>
+<tr><td>Main.java</td><td>[BenchmarkAnalyzer, ReportGenerator, FileResult, DryAnalyzer, CyclomaticAnalyzer, CboAnalyzer, CoverageAnalyzer, DuplicateBlock, LoadResult, FileScanner, MethodResult, Result]</td><td>12</td><td><span class='badge badge-critical'>CRITICO - REFATORAR</span></td></tr>
+<tr><td>CboAnalyzer.java</td><td>[FileResult, Character]</td><td>2</td><td><span class='badge badge-ok'>BAIXO - OK</span></td></tr>
+<tr><td>CoverageAnalyzer.java</td><td>[FileResult, Result]</td><td>2</td><td><span class='badge badge-ok'>BAIXO - OK</span></td></tr>
+<tr><td>CyclomaticAnalyzer.java</td><td>[FileResult, MethodResult]</td><td>2</td><td><span class='badge badge-ok'>BAIXO - OK</span></td></tr>
+<tr><td>DryAnalyzer.java</td><td>[DuplicateBlock, Result]</td><td>2</td><td><span class='badge badge-ok'>BAIXO - OK</span></td></tr>
+<tr><td>FileScanner.java</td><td>[]</td><td>0</td><td><span class='badge badge-ok'>BAIXO - OK</span></td></tr>
+<tr><td>ReportGenerator.java</td><td>[BenchmarkAnalyzer, LocalDateTime, FileResult, DryAnalyzer, CyclomaticAnalyzer, CboAnalyzer, CoverageAnalyzer, DuplicateBlock, DateTimeFormatter, LoadResult, Result, MethodResult]</td><td>12</td><td><span class='badge badge-critical'>CRITICO - REFATORAR</span></td></tr>
+</table></div>
+<div class='section'>
+<h2>&#128260; Modulo I - Duplicacao de Codigo (DRY)</h2>
+<table>
+<tr><th>#</th><th>Encontrado em</th><th>Trecho</th></tr>
+<tr><td>1</td><td>[CoverageAnalyzer.java (linha 79), CyclomaticAnalyzer.java (linha 55)]</td><td><pre style='font-size:0.8em'>private static String extractMethodName(String line) {
+try {
+int parenIndex = line.indexOf("(");
+String beforeParen = line.substring(0, parenIndex).trim();
+String[] parts = beforeParen.split("\\s+");
+return parts[parts.length - 1];
+} catch (Exception e) {
+return "desconhecido";</pre></td></tr>
+<tr><td>2</td><td>[CoverageAnalyzer.java (linha 80), CyclomaticAnalyzer.java (linha 56)]</td><td><pre style='font-size:0.8em'>try {
+int parenIndex = line.indexOf("(");
+String beforeParen = line.substring(0, parenIndex).trim();
+String[] parts = beforeParen.split("\\s+");
+return parts[parts.length - 1];
+} catch (Exception e) {
+return "desconhecido";</pre></td></tr>
+<tr><td>3</td><td>[CoverageAnalyzer.java (linha 81), CyclomaticAnalyzer.java (linha 57)]</td><td><pre style='font-size:0.8em'>int parenIndex = line.indexOf("(");
+String beforeParen = line.substring(0, parenIndex).trim();
+String[] parts = beforeParen.split("\\s+");
+return parts[parts.length - 1];
+} catch (Exception e) {
+return "desconhecido";</pre></td></tr>
+<tr><td>4</td><td>[CoverageAnalyzer.java (linha 82), CyclomaticAnalyzer.java (linha 58)]</td><td><pre style='font-size:0.8em'>String beforeParen = line.substring(0, parenIndex).trim();
+String[] parts = beforeParen.split("\\s+");
+return parts[parts.length - 1];
+} catch (Exception e) {
+return "desconhecido";</pre></td></tr>
+</table></div>
+<div class='section'>
+<h2>&#129518; Modulo III - Cobertura de Testes</h2>
+<table>
+<tr><th>Arquivo</th><th>Teste Encontrado</th><th>Metodos Totais</th><th>Testados</th><th>Cobertura</th><th>Status</th></tr>
+<tr><td>BenchmarkAnalyzer.java</td><td>Nao</td><td>9</td><td>0</td><td>0,0%</td><td><span class='badge badge-critical'>SEM TESTES - CRITICO</span></td></tr>
+<tr><td>Main.java</td><td>Nao</td><td>2</td><td>0</td><td>0,0%</td><td><span class='badge badge-critical'>SEM TESTES - CRITICO</span></td></tr>
+<tr><td>CboAnalyzer.java</td><td>Nao</td><td>7</td><td>0</td><td>0,0%</td><td><span class='badge badge-critical'>SEM TESTES - CRITICO</span></td></tr>
+<tr><td>CoverageAnalyzer.java</td><td>Nao</td><td>11</td><td>0</td><td>0,0%</td><td><span class='badge badge-critical'>SEM TESTES - CRITICO</span></td></tr>
+<tr><td>CyclomaticAnalyzer.java</td><td>Nao</td><td>6</td><td>0</td><td>0,0%</td><td><span class='badge badge-critical'>SEM TESTES - CRITICO</span></td></tr>
+<tr><td>DryAnalyzer.java</td><td>Nao</td><td>8</td><td>0</td><td>0,0%</td><td><span class='badge badge-critical'>SEM TESTES - CRITICO</span></td></tr>
+<tr><td>FileScanner.java</td><td>Nao</td><td>1</td><td>0</td><td>0,0%</td><td><span class='badge badge-critical'>SEM TESTES - CRITICO</span></td></tr>
+<tr><td>ReportGenerator.java</td><td>Nao</td><td>7</td><td>0</td><td>0,0%</td><td><span class='badge badge-critical'>SEM TESTES - CRITICO</span></td></tr>
+<tr style='font-weight:bold'><td colspan='4'>Cobertura Geral</td><td>0,0%</td><td><span class='badge badge-critical'>SEM TESTES - CRITICO</span></td></tr>
+</table></div>
+<div class='section'>
+<h2>&#9201; Modulo II - Benchmarking Dinamico</h2>
+<table>
+<tr><th>Carga</th><th>Tempo (ms)</th><th>Status</th></tr>
+<tr><td>100 registros</td><td>115ms</td><td><span class='badge badge-ok'>OTIMO - OK</span></td></tr>
+<tr><td>500 registros</td><td>99ms</td><td><span class='badge badge-ok'>OTIMO - OK</span></td></tr>
+<tr><td>1000 registros</td><td>101ms</td><td><span class='badge badge-ok'>OTIMO - OK</span></td></tr>
+<tr><td>5000 registros</td><td>98ms</td><td><span class='badge badge-ok'>OTIMO - OK</span></td></tr>
+<tr style='font-weight:bold'><td colspan='2'>Aumento total de latencia</td><td>-14,8% <span class='badge badge-ok'>[OTIMO - OK]</span></td></tr>
+</table></div>
+</div>
+<footer>Gerado pela ferramenta ISO/IEC 25010 Analyzer</footer>
+</body></html>
